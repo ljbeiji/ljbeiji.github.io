@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>起始页</title>
+	<link rel="stylesheet" href="CSS.css" type="text/css"/>
+    <script>
+		var timeOut = setTimeout(time,0);//定时器
+		function time(){
+			var h=new Date().getHours();//时
+			var m=new Date().getMinutes();//分
+			if(h<10 && m<10)
+				document.getElementById("showTime").innerHTML ="0"+h+":"+"0"+m;
+			else if(h<10 && m>10)
+				document.getElementById("showTime").innerHTML ="0"+h+":"+m;
+			else if(h>10 && m<10)
+				document.getElementById("showTime").innerHTML =h+":"+"0"+m;
+			else
+				document.getElementById("showTime").innerHTML =h+":"+m;
+			timeOut = setTimeout(time,1000);
+		}
+		function search(){
+			if (document.getElementById("input").value != "") {
+				window.location.href = "https://www.baidu.com/s?wd=" + document.getElementById("input").value;
+				document.getElementById("input").value = "";
+			}
+			return false;
+		}
+	</script>
+</head>
+<body>
+<div class="time" id="time">
+	<h1 id="showTime"></h1>
+</div>
+<div class="expressLinkBox" id="expressLinkBox">
+	<div class="expressLinkBoxItem">
+		<a href="https://fanyi.baidu.com/" target="_blank" class="expresslinks">翻译</a>
+	</div>
+	<div class="expressLinkBoxItem">
+		<a href="https://email.163.com/" target="_blank" class="expresslinks">网易邮箱</a>
+	</div>
+	<div class="expressLinkBoxItem">
+		<a href="https://music.163.com/" target="_blank" class="expresslinks">网易云音乐</a>
+	</div>
+	<div class="expressLinkBoxItem">
+		<a href="https://github.com/" target="_blank" class="expresslinks">GitHub</a>
+	</div>
+	<div class="expressLinkBoxItem">
+		<a href="https://tieba.baidu.com/" target="_blank" class="expresslinks">贴吧</a>
+	</div>
+	<div class="expressLinkBoxItem">
+		<a href="https://www.bilibili.com/" target="_blank" class="expresslinks">bilibili</a>
+	</div>
+	<div class="expressLinkBoxItem">
+		<a href="https://www.jd.com/" target="_blank" class="expresslinks">京东</a>
+	</div>
+	<div class="expressLinkBoxItem">
+		<a href="https://www.taobao.com/" target="_blank" class="expresslinks">淘宝</a>
+	</div>
+</div>
+<div class="text">
+    <form onsubmit="return search()">
+		<input type="text" class="input" id="input" name="word" size="30" placeholder="Search" autocomplete="off">
+    </form>
+</div>
+</body>
+</html>
