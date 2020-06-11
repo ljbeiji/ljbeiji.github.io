@@ -12,6 +12,47 @@ body{
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-position: center;
+	cursor: default;
+	user-select:none;
+}
+.icon{
+	position: absolute;
+	left: calc(50% + 860px);
+	top: 40px;
+	cursor:pointer;
+}
+.icon path{
+	transition: fill 0.25s;
+}
+.icon:hover path,
+.icon:focus path {
+	fill: #cdcdcd;
+	transition: fill 0.25s;
+}
+.menu {
+	position: absolute;
+	left: calc(50% + 725px);
+	opacity: 0;
+	top: 80px;
+    position: absolute;
+    width: 160px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all .2s;
+    overflow: hidden;
+}
+.menuItem{
+	background-color: #fff;
+    padding-left: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 12px;
+    transition: all .25s;
+}
+.menuItem:hover,
+.menuItem:focus{
+	background-color: rgba(0,0,0,.15);
+    transition: background-color .2s;
 }
 h1{
 	position: absolute;
@@ -43,13 +84,7 @@ h1{
 	backdrop-filter: blur(10px);
 	transition: width .25s ,background-color .25s ,left .25s;
 }
-.input:focus{
-	width: 530px;
-	left: calc(50% - 270px);
-	background-color: rgba(255,255,255,.70);
-	backdrop-filter: blur(10px);
-	transition: width .25s ,left .25s ,background-color .25s;
-}
+.input:focus,
 .input:hover{
 	width: 530px;
 	left: calc(50% - 270px);
